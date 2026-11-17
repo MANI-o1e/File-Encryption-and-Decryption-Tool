@@ -68,3 +68,34 @@ A cryptographic desktop application designed to encrypt and decrypt text files u
 ---
 
 ## Project Structure
+ManiProject/
+├── bin/                                  # Compiled .class files
+├── src/
+│   └── filecrypt/
+│       ├── algo/
+│       │   ├── Cryptable.java            # Cryptographic interface
+│       │   ├── Cipher.java               # Abstract base class
+│       │   ├── CaesarCipher.java         # Caesar cipher implementation
+│       │   ├── VigenereCipher.java       # Vigenère cipher implementation
+│       │   └── XorCipher.java            # Bitwise XOR cipher implementation
+│       ├── db/
+│       │   ├── DatabaseManager.java      # JDBC manager for 'operations' table
+│       │   └── EmbeddedJdbcDriver.java   # Zero-dependency JDBC driver
+│       ├── exception/
+│       │   └── InvalidKeyException.java  # Custom exception for key validation
+│       ├── model/
+│       │   └── OperationRecord.java      # Data model for database rows
+│       ├── test/
+│       │   └── TestRunner.java           # 18 automated unit & functional tests
+│       ├── ui/
+│       │   ├── MainFrame.java            # Main application window
+│       │   ├── HistoryDialog.java        # Audit history dialog with JTable
+│       │   └── UITheme.java              # Color palette and styling constants
+│       ├── util/
+│       │   └── FileHandler.java          # File reading/writing & formatting
+│       └── App.java                      # Packaged launcher
+├── Main.java                             # Primary application launcher
+├── sample_document.txt                   # Sample test file
+├── compile.bat                           # 1-click Windows compile script
+├── run.bat                               # 1-click Windows run script
+└── README.md                             # Documentation
